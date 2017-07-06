@@ -4,12 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-      "deploy": "aws s3 sync dist/ s3://lift.brandonkeown.com --acl public-read"
+    "deploy": "rm -rf dist && webpack -p && aws s3 sync dist/ s3://lift.brandonkeown.com --acl public-read"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "browser-sync-webpack-plugin": "^1.1.4",
+    "copy-webpack-plugin": "^4.0.1",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.0.0"
   },
