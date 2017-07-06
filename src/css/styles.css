@@ -10,12 +10,14 @@
   cursor: pointer;
 }
 
-.stuck-to-bottom {
+.stuck-to-top {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   z-index: 2;
   width: 100%;
+  background: white;
+  border-bottom: 1px solid #CCC;
 }
 
 .bar-container {
