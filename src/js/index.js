@@ -13,6 +13,7 @@ state.subscribe(v => {
 
 state.init({
     vals: {
+        percBase: false,
         kg: 0,
         lb: 0,
         noRed: false

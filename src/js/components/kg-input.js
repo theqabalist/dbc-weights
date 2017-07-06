@@ -5,7 +5,7 @@ const changeKg = require("../data-flow/kg-change");
 
 module.exports = class KGInput extends Component {
     render() {
-        return div({className: "ui right labeled fluid large input"}, [
+        return div({className: "ui right labeled fluid small input"}, [
             input({type: "text", onChange: evt => changeKg(evt.target.value), value: this.props.kg}),
             div({className: "ui label"}, "KG")
         ]);

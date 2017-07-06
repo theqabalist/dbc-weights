@@ -3,7 +3,7 @@
 }
 
 .ui.table {
-  font-size: .65em !important;
+  font-size: .9em !important;
 }
 
 .weight-link:hover {
@@ -16,7 +16,7 @@
   left: 0;
   z-index: 2;
   width: 100%;
-  background: white;
+  background: #EEE;
   border-bottom: 1px solid #CCC;
 }
 
