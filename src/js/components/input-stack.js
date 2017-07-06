@@ -8,10 +8,10 @@ const NoRedInput = require("./no-red-input");
 
 module.exports = class InputStack extends Component {
     render() {
-        return div({className: "ui segments"}, [
-            div({className: "ui right aligned segment"}, [h(KGInput, this.props)]),
+        return div({className: "ui horizontal segments container"}, [
             div({className: "ui right aligned segment"}, [h(LBInput, this.props)]),
-            div({className: "ui right aligned segment"}, [h(NoRedInput, this.props)])
+            div({className: "ui right aligned segment"}, [h(KGInput, this.props)])
+            // div({className: "ui right aligned segment"}, [h(NoRedInput, this.props)])
         ]);
     }
 };
