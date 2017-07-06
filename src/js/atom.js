@@ -1,4 +1,4 @@
-const {clone} = require('ramda');
+const {clone} = require("ramda");
 let store;
 
 const subscribers = [];
