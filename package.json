@@ -1,0 +1,32 @@
+{
+  "name": "weights",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+      "deploy": "aws s3 sync dist/ s3://lift.brandonkeown.com --acl public-read"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.0.0"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "browser-sync": "^2.18.12",
+    "eventemitter3": "^2.0.3",
+    "hyperscript": "^2.0.2",
+    "kefir": "^3.7.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-hyperscript": "^3.0.0",
+    "react-hyperscript-helpers": "^1.2.0",
+    "semantic-ui": "^2.2.10",
+    "semantic-ui-react": "^0.70.0",
+    "uglify-es-webpack-plugin": "^0.0.2"
+  }
+}

@@ -1,0 +1,136 @@
+.title {
+    margin-top: 20px;
+}
+
+.bar-container {
+    width: 100%;
+    padding-bottom: 20.5%;
+    position: relative;
+}
+
+.bar-container * {
+    position: absolute;
+}
+
+.plate {
+    border-radius: .5em;
+}
+
+.kg25 {
+    height: 100%;
+    width: 3%;
+    background: #C00;
+    border: 1px solid #900;
+    top: 0;
+}
+
+.kg20 {
+    height: 100%;
+    width: 2.5%;
+    background: #00C;
+    border: 1px solid #009;
+    top: 0;
+}
+
+.kg15 {
+    height: 100%;
+    width: 2%;
+    background: #CC0;
+    border: 1px solid #990;
+    top: 0;
+}
+
+.kg10 {
+    height: 100%;
+    width: 1.5%;
+    background: #0C0;
+    border: 1px solid #090;
+    top: 0;
+}
+
+.kg5 {
+    width: 1.2%;
+    height: 51.1%;
+    top: 24.45%;
+    background: #FCFCFC;
+    border: 1px solid #CCC;
+}
+
+.kg2-5{
+    width: 0.9%;
+    height: 46.7%;
+    top: 26.65%;
+    background: #C00;
+    border: 1px solid #900;
+}
+
+.kg2{
+    width: 0.9%;
+    height: 42.2%;
+    top: 28.9%;
+    background: #00C;
+    border: 1px solid #009;
+}
+
+.kg1-5{
+    width: 0.8%;
+    height: 38.8%;
+    top: 30.6%;
+    background: #CC0;
+    border: 1px solid #990;
+}
+
+.kg1{
+    width: 0.7%;
+    height: 35.6%;
+    top: 32.2%;
+    background: #0C0;
+    border: 1px solid #090;
+}
+
+.kg-5{
+    width: 0.6%;
+    height: 30%;
+    top: 35%;
+    background: #FCFCFC;
+    border: 1px solid #CCC;
+}
+
+.bar {
+    top: 47%;
+    left: 20%;
+    width: 60%;
+    height: 6%;
+    background: #BBB;
+}
+
+.collar {
+    width: 1.5%;
+    top: 42.25%;
+    height: 15.5%;
+    background: #BBB;
+    border: 1px solid #666;
+}
+
+.collar.left {
+    left: 18.5%;
+}
+
+.collar.right {
+    left: 80%;
+}
+
+.sleeve {
+    height: 11.1%;
+    top: 44.5%;
+    width: 18.5%;
+    background: #DDD;
+}
+
+.sleeve.left {
+    left: 0%;
+}
+
+.sleeve.right {
+    left: 81.5%;
+}
