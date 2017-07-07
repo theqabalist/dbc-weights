@@ -17,7 +17,7 @@ module.exports = class App extends Component {
             h(WeightStack, this.props.plates),
             h(PercTable, this.props.vals),
             div({className: "footer", style: {textAlign: "right"}}, [
-                h(Settings, this.props.vals)
+                i({className: "large setting icon"})
             ])
         ]);
     }

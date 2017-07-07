@@ -21,7 +21,7 @@ fromEvents(changeEmitter, "no-red-changed")
 
 module.exports = class Settings extends Component {
     render() {
-        return h(Modal, {trigger: i({className: "large setting icon"})}, [
+        return h(Modal, {closeOnDimmerClick: true, closeOnDocumentClick: true, trigger: i({className: "large setting icon"})}, [
             h(Modal.Header, ["Settings"]),
             h(Modal.Content, [div({className: "ui segments"}, [
                 div({className: "ui segment"}, [
