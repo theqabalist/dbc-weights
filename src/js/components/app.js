@@ -1,5 +1,5 @@
 const {Component} = require("react");
-const {div, h1, br} = require("react-hyperscript-helpers");
+const {div, i} = require("react-hyperscript-helpers");
 const h = require("react-hyperscript");
 
 const InputStack = require("./input-stack");
@@ -13,7 +13,8 @@ module.exports = class App extends Component {
                 h(InputStack, this.props.vals)
             ]),
             h(WeightStack, this.props.plates),
-            h(PercTable, this.props.vals)
+            h(PercTable, this.props.vals),
+            div({className: "footer", style: {textAlign: "right"}}, [i({className: "large setting icon"})])
         ]);
     }
 };

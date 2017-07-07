@@ -1,10 +1,20 @@
-.title {
-    margin-top: 20px;
-}
-
 .ui.table {
   font-size: .9em !important;
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #EEE;
+  border-top: 1px solid #CCC;
+  width: 100%;
+  padding: 0.25em;
+}
+
+  .footer .setting.icon {
+    color: #999;
+  }
 
 .weight-link:hover {
   cursor: pointer;

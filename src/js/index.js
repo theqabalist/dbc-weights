@@ -1,7 +1,6 @@
 /*global document*/
 const ReactDOM = require("react-dom");
 const h = require("react-hyperscript");
-const {set, lensProp} = require("ramda");
 const state = require("./atom");
 
 state.subscribe(v => {
@@ -23,4 +22,3 @@ state.init({
         womens: []
     }
 });
-state.dispatch(set(lensProp("message"), "hello world!"));

@@ -25,7 +25,7 @@ module.exports = class PercentageTable extends Component {
         return div({className: "ui segments"}, [
             div({className: "ui inverted center aligned blue segment"}, [h3({onClick}, "Percentages")]),
             div({className: "ui right aligned segment"}, [
-                table({className: "ui unstackable definition table", style: {width: "100%"}}, [
+                table({className: "ui unstackable striped definition table", style: {width: "100%"}}, [
                     thead([
                         tr(headers.map(v => th({className: "ui center aligned"}, [v])))
                     ]),

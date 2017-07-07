@@ -1,6 +1,6 @@
 const {fromEvents} = require("kefir");
 const EventEmitter = require("eventemitter3");
-const {path, multiply, or, __, pipe, assocPath} = require("ramda");
+const {multiply, or, __, pipe, assocPath} = require("ramda");
 const state = require("../atom");
 const KG2LB = 2.20462;
 
