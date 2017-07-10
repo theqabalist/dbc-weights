@@ -1,7 +1,6 @@
 const {Component} = require("react");
 const h = require("react-hyperscript");
-const {Modal, Checkbox} = require("semantic-ui-react");
-const {i, div, label} = require("react-hyperscript-helpers");
+const {div, h3, input, label, table, thead, th, tbody, tr, td} = require("react-hyperscript-helpers");
 const {fromEvents} = require("kefir");
 const state = require("../atom");
 const {prop, assocPath, pipe} = require("ramda");
@@ -10,31 +9,52 @@ const plates = require("../plates");
 const changeEmitter = new EventEmitter();
 
 fromEvents(changeEmitter, "no-red-changed")
-    .map(prop("checked"))
-    .onValue(noRed => {
-        state.dispatch(state => pipe(
-            assocPath(["vals", "noRed"], noRed),
-            assocPath(["plates", "mens"], (noRed ? plates.noRed : plates).mens(state.vals.kg)),
-            assocPath(["plates", "womens"], (noRed ? plates.noRed : plates).womens(state.vals.kg))
-        )(state));
+    .onValue(() => {
+        state.dispatch(state => {
+            const noRed = !state.vals.noRed;
+            return pipe(
+                assocPath(["vals", "noRed"], noRed),
+                assocPath(["plates", "mens"], (noRed ? plates.noRed : plates).mens(state.vals.kg)),
+                assocPath(["plates", "womens"], (noRed ? plates.noRed : plates).womens(state.vals.kg))
+            )(state);
+        });
     });
 
 module.exports = class Settings extends Component {
     render() {
-        return h(Modal, {closeOnDimmerClick: true, closeOnDocumentClick: true, trigger: i({className: "large setting icon"})}, [
-            h(Modal.Header, ["Settings"]),
-            h(Modal.Content, [div({className: "ui segments"}, [
-                div({className: "ui segment"}, [
-                    h(Checkbox, {style: {float: "left"}, slider: true, checked: this.props.noRed, onChange: (_, data) => changeEmitter.emit("no-red-changed", data)}),
-                    label({style: {float: "right"}}, ["No red plates available"]),
-                    div({style: {clear: "both"}})
-                ]),
-                div({className: "ui segment"}, [
-                    h(Checkbox, {style: {float: "left"}, disabled: true, slider: true, checked: this.props.womensMode, onChange: (_, data) => changeEmitter.emit("womens-mode-changed", data)}),
-                    label({style: {float: "right"}}, ["Use women's bar"]),
-                    div({style: {clear: "both"}})
+        return div({
+            onClick: e => {
+                e.stopPropagation();
+            }, style: {paddingTop: "1em", paddingBottom: "1em", width: "95%", margin: "auto"}, className: "ui segment"
+        }, [
+            div({className: "ui container"}, [
+                div({className: "header"}, [h3("Settings")]),
+                table({className: "ui unstackable very basic table", style: {width: "100%"}}, [
+                    tbody([
+                        tr([
+                            td("No red plates available."),
+                            td({className: "right aligned"}, [div({
+                                className: "ui fitted toggle checkbox", onClick: e => {
+                                    changeEmitter.emit("no-red-changed");
+                                }
+                            }, [input({type: "checkbox"}), label()])])
+                        ]),
+                        tr([
+                            td("Women's mode."),
+                            td({className: "right aligned"}, [div({className: "ui fitted toggle checkbox"}, [input({type: "checkbox", disabled: true}), label()])])
+                        ])
+                    ])
+                // ,
+                // div({className: "ui horizontal segments"}, [
+                //     div({className: "ui segment"}, ["No red plates available."]),
+                // div({className: "ui compact center aligned segment"}, )
+                // ]),
+                // div({className: "ui horizontal segments"}, [
+                //     div({className: "ui segment"}, ["Women's bar mode."]),
+                //     div({className: "ui compact center aligned segment"}, [div({className: "ui fitted toggle checkbox"}, [input({type: "checkbox"}), label()])])
+                // ])
                 ])
-            ])])
+            ])
         ]);
     }
 };

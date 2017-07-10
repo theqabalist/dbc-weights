@@ -11,6 +11,10 @@ state.subscribe(v => {
 });
 
 state.init({
+    modal: {
+        active: false,
+        name: null
+    },
     vals: {
         percBase: false,
         kg: 0,
